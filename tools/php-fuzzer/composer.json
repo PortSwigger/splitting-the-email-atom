@@ -1,0 +1,6 @@
+{
+    "require": {
+        "phpmailer/phpmailer": "^6.8",
+        "algo26-matthias/idna-convert": "^4.0"
+    }
+}

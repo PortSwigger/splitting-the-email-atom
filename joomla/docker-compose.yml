@@ -1,0 +1,32 @@
+services:
+  joomla:
+    platform: linux/amd64
+    container_name: vulnerable-joomla-app
+    image: joomla:5.0.2-php8.1-apache
+    restart: always
+    ports:
+      - 8000:80
+    environment:
+      - JOOMLA_DB_HOST=joomladb
+      - JOOMLA_DB_PASSWORD=letmein
+    depends_on:
+      joomladb:
+        condition: service_healthy      
+    user: 1000:1000
+    volumes:
+      - ./site_joomla:/var/www/html
+
+  joomladb:
+    platform: linux/amd64
+    container_name: vulnerable-joomla-db
+    image: mysql:8.0.13
+    restart: always
+    environment:
+      - MYSQL_ROOT_PASSWORD=letmein
+    healthcheck:
+      test: ["CMD", "mysqladmin" ,"ping", "-h", "localhost"]
+      timeout: 20s
+      retries: 10      
+    user: 1000:1000
+    volumes:
+      - ./db:/var/lib/mysql  

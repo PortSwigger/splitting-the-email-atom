@@ -1,0 +1,53 @@
+[
+  {
+    "argument1Default": "0x100",
+    "code": "output = input.split('').map(chr => \n\tString.fromCodePoint(mask + chr.codePointAt())\n).join('');",
+    "argument1Type": "Number",
+    "numberOfArgs": 1,
+    "argument1": "mask",
+    "language": "JavaScript",
+    "tagName": "_unicode_overflow"
+  },
+  {
+    "argument1Default": "0xfff",
+    "code": "if(max > 0xffff) {\n   throw new Error(\"Max parameter is too large\");\n}\n\noutput = input.split('').map(chr => {\n\tlet characters = '';\n\tfor(let i=chr.codePointAt()+1;i<=max;i++){\n\t\tif(i % 256 === chr.codePointAt()) {\n\t\t\tcharacters += String.fromCodePoint(i);\n\t\t}\n\t}\n\treturn characters;\n}).join('');",
+    "argument1Type": "Number",
+    "numberOfArgs": 1,
+    "argument1": "max",
+    "language": "JavaScript",
+    "tagName": "_unicode_overflow_variations"
+  },
+  {
+    "code": "output = input.split('').map(chr => '=' + chr.codePointAt().toString(16).padStart(2, '0')).join('')",
+    "numberOfArgs": 0,
+    "language": "JavaScript",
+    "tagName": "_encoded_word_encode"
+  },
+  {
+    "code": "function isHexChar(char) {\n  return (char >= '0' && char <= '9') || (char >= 'A' && char <= 'F') || (char >= 'a' && char <= 'f');\n}\n\nlet parts = input.replaceAll(\"_\",\" \").split('=');\noutput = parts.slice(1).reduce((str, part) => \n  str + (isHexChar(part[0]) && isHexChar(part[1]) ? String.fromCodePoint(parseInt(part.slice(0, 2), 16)) : part.slice(0, 2)) + part.slice(2), \nparts[0]);",
+    "numberOfArgs": 0,
+    "language": "JavaScript",
+    "tagName": "_encoded_word_decode"
+  },
+  {
+    "code": "output = input.length() == 0 ? \"\" \n\t: \"&\" + input.replaceAll(\"(.)\",\"\\u0000\\$0\")\n\t.bytes.encodeBase64().toString()\n\t.replaceAll(/=+$/,\"\") + \"-\";",
+    "numberOfArgs": 0,
+    "language": "Groovy",
+    "tagName": "_email_utf7"
+  },
+  {
+    "argument1Default": "iso-8859-1",
+    "code": "output = \"=?\"+charset+\"?q?\"+input+\"?=\";",
+    "argument1Type": "String",
+    "numberOfArgs": 1,
+    "argument1": "charset",
+    "language": "JavaScript",
+    "tagName": "_encode_word_meta"
+  },
+  {
+    "code": "output = input.replaceAll(\"&[a-zA-Z0-9]+-\", { match -> \n  return new String(match.replaceAll(\"[&-]\",\"\").decodeBase64())\n})",
+    "numberOfArgs": 0,
+    "language": "Groovy",
+    "tagName": "_email_utf7_decode"
+  }
+]
