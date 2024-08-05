@@ -12,4 +12,4 @@ The tools directory contains all the tools I used for this research. Including t
 
 ## Academy CTF challenge
 
-We've created a [CTF on the Web Security Academy](https://portswigger.net/web-security/logic-flaws/examples) so you can try out your new skills.
+We've created a [CTF on the Web Security Academy](https://portswigger.net/web-security/logic-flaws/examples#email-address-parser-discrepancies) so you can try out your new skills.
